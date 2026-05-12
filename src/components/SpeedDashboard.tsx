@@ -218,7 +218,7 @@ export default function SpeedDashboard({ data }: { data: SpeedRow[] }) {
                     border: "1px solid var(--border)",
                   }}
                   labelFormatter={(label) => formatMonth(String(label))}
-                  formatter={(v: number) => [`${v.toFixed(1)} mph`]}
+                  formatter={(v) => [`${Number(v).toFixed(1)} mph`]}
                 />
                 <Line
                   type="monotone"
