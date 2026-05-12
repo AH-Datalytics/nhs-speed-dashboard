@@ -119,10 +119,10 @@ body {
   font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--navy);
-  margin: 18px 0 4px;
+  margin: 0 0 4px;
 }
 .section-title span {
-  color: var(--accent);
+  color: var(--red);
 }
 .page-subtitle {
   font-family: var(--mono);
