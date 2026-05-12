@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e8f0f8;
+  --foreground: #1e2a35;
+  --navy: #1e2a35;
+  --navy-light: #2d3d4a;
+  --steel: #5a6a7a;
+  --accent: #2d5f8a;
+  --muted: #5a6a7a;
+  --border: #ddd8ce;
+  --card: #F5F0E8;
+  --card-alt: #efe9df;
+  --red: #c0392b;
+  --green: #1a7a3a;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--sans);
+}
+
+.shell { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.panel-hdr {
+  padding: 8px 14px;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--steel);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel-body { padding: 12px 14px; }
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+.fg label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--steel);
+}
+.fg select {
+  font-family: var(--sans);
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--card);
+  color: var(--navy);
+}
+.fg select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.toggle-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--steel);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.toggle-btn.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.section-title {
+  font-family: var(--sans);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--navy);
+  margin: 18px 0 4px;
+}
+.section-title span {
+  color: var(--accent);
+}
+.page-subtitle {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--steel);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.footer {
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--steel);
+  text-align: center;
+}
+.footer a { color: var(--navy-light); text-decoration: underline; }
+
+.portal-bar {
+  border-bottom: 3px solid #2d5f8a;
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(26,58,92,0.08);
+}
+.portal-logo {
+  width: 30px; height: 30px; border-radius: 7px;
+  background: linear-gradient(135deg, #01396C, #2d5f8a);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; color: white; letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+.portal-title { font-size: 18px; letter-spacing: -0.3px; }
+.portal-title b { font-weight: 800; color: #1a3a5c; }
+.portal-title span { font-weight: 600; color: #4a7aaa; }
+
+.export-btn {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: white;
+  color: var(--steel);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+.export-btn:hover {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+@media (max-width: 640px) {
+  .filters { flex-direction: column; align-items: stretch; }
+}
